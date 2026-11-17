@@ -98,13 +98,13 @@ var grafica = new Chart(document.getElementById('grafica'), {
         labels: [],
         datasets: [
             {label: 'Temperatura (°C)', data: [], borderColor: 'red', yAxisID: 'y'},
-            {label: 'Humedad (%HR)', data: [], borderColor: 'blue', yAxisID: 'y1'}
+            {label: 'Humedad (%)', data: [], borderColor: 'blue', yAxisID: 'y1'}
         ]
     },
     options: {
         scales: {
             y: {position: 'left', title: {display: true, text: 'Temperatura (°C)'}},
-            y1: {position: 'right', title: {display: true, text: 'Humedad (%HR)'},
+            y1: {position: 'right', title: {display: true, text: 'Humedad (%)'},
                  grid: {drawOnChartArea: false}}
         }
     }
@@ -123,7 +123,7 @@ async function actualizar() {
             document.getElementById('boton').innerText =
                 data.boton[n - 1] == 0 ? 'Presionado' : 'Suelto';
             document.getElementById('temperatura').innerText = data.temperatura[n - 1] + ' °C';
-            document.getElementById('humedad').innerText = data.humedad[n - 1] + ' %HR';
+            document.getElementById('humedad').innerText = data.humedad[n - 1] + ' %';
             document.getElementById('hora').innerText =
                 new Date(data.tiempo[n - 1] * 1000).toLocaleTimeString();
         }
